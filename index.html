@@ -16,6 +16,7 @@
                     colors: {
                         clifford: '#da373d',
                         myColor: '#021E73',
+                        myFirst: '#91B2F2',
                     }
                 }
             }
@@ -23,22 +24,50 @@
     </script>
 </head>
 
-<body class="">
+<body class="bg-myFirst">
     <header class="bg-myColor ">
         <nav class="w-4/5 mx-auto text-white h-20 flex justify-between items-center">
             <div>
                 <h1 class="text-4xl font-bold">Personal Bank</h1>
             </div>
             <div class="text-lg g-2 ">
-                <a class="ml-5" href="">Personal</a>
-                <a class="ml-5" href="">Business</a>
-                <a class="ml-5" href="">Developer</a>
-                <a class="ml-5 border rounded-full py-1 px-5" href="">Sign In</a>
-                <a class="ml-5 border rounded-full py-1 px-5 bg-white text-myColor" href="">Sign Up</a>
+                <a class="ml-5" href="#personal">Personal</a>
+                <a class="ml-5" href="#business">Business</a>
+                <a class="ml-5" href="#developer">Developer</a>
+                <a class="ml-5 border-2 rounded-full py-1 px-5" href="#singin">Sign In</a>
+                <a class="ml-5 border-2 rounded-full py-1 px-5 bg-white text-myColor font-semibold" href="#signup">Sign
+                    Up</a>
             </div>
         </nav>
     </header>
+    <main class="w-4/5 mx-auto ">
+        <section class="h-screen ">
+            <div class="">
+                <div>
+                    <!-- <img class="   " src="./images/5917.jpg" alt=""> -->
+                </div>
+                <div class="my-5 ">
+                    <h2 class="  w-2/5 rounded-xl px-5 my-2 py-2 text-center inline-block font-bold text-2xl">
+                        Please Log In
+                    </h2>
+                    <br>
+                    <legend>Your Email</legend>
+                    <input placeholder="Enter email" class="my-3 p-3 rounded-xl border-myColor border-2 w-2/5"
+                        type="email" name="name" id="">
+                    <br>
+                    <legend>Your Password</legend>
+                    <input placeholder="Enter password" class="my-3 p-3 rounded-xl border-myColor border-2 w-2/5"
+                        type="password" name="pass" id="">
+                    <br>
+                    <button
+                        class="my-3 p-3 rounded-xl bg-myColor text-white font-bold text-lg border-1 w-2/5">Submit</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <!-- javascript  -->
+    <script src="./script.js"></script>
 </body>
 
 </html>
