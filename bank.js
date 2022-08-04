@@ -6,8 +6,12 @@ document.getElementById('deposite-submit').addEventListener('click', function (e
     const currentDeposite = depositeShow.innerText;
     const updateDeposit = parseFloat(currentDeposite) + parseFloat(depositeAmount);
     depositeShow.innerText = updateDeposit;
-    deposite.value = '';
 
+    const balanceShow = document.getElementById('balance-show');
+    const balanceAmount = balanceShow.innerText;
+    const updateBalance = parseFloat(balanceAmount) + parseFloat(depositeAmount);
+    balanceShow.innerText = updateBalance;
+    deposite.value = '';
 
 })
 
@@ -19,7 +23,11 @@ document.getElementById('withdraw-submit').addEventListener('click', function (e
     const currentWithdraw = withdrawShow.innerText;
     const updateWithdraw = parseFloat(currentWithdraw) + parseFloat(withdrawAmount);
     withdrawShow.innerText = updateWithdraw;
-    withdraw.value = '';
 
+    const balanceShow = document.getElementById('balance-show');
+    const balanceAmount = balanceShow.innerText;
+    const updateBalance = parseFloat(balanceAmount) - parseFloat(withdrawAmount);
+    balanceShow.innerText = updateBalance;
+    withdraw.value = '';
 
 })
