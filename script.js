@@ -1,3 +1,4 @@
+// log in system 
 document.getElementById('submit').addEventListener('click', function (event) {
     const name = document.getElementById('name').value;
     event.value = '';
