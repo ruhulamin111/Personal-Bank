@@ -5,11 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank</title>
+    <title>Account</title>
+    <!-- tailwind css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- customise css  -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        myColor: '#021E73',
+                        myFirst: '#91B2F2',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <h1>Banking site</h1>
+<body class="bg-myFirst w-4/5 mx-auto ">
+    <section class=" ">
+        <h1 class="text-4xl font-bold my-3 text-center text-myColor">Account Information</h1>
+        <div class="grid grid-cols-3 text-2xl my-10 gap-20">
+            <div class="border-2 font-semibold p-4 rounded-xl text-center ">
+                <h3>Diposite</h3>
+                <p>$ 00</p>
+            </div>
+            <div class="border-2 font-semibold p-4 rounded-xl text-center ">
+                <h3>Withdraw</h3>
+                <p>$ 00</p>
+            </div>
+            <div class="border-2 font-semibold p-4 rounded-xl text-center ">
+                <h3>Balance</h3>
+                <p>$ 00</p>
+            </div>
+        </div>
+
+    </section>
+    <section class="grid grid-cols-2 text-center">
+        <!-- Deposite part  -->
+        <div>
+            <legend>Enter Deposite Amount</legend>
+            <input placeholder="Deposite amount" class="my-3 p-3 rounded-xl border-myColor border w-2/5" type="text"
+                name="name" id="deposite">
+            <br>
+            <button id="deposite-submit"
+                class="my-3 p-3 rounded-xl bg-myColor text-white font-bold text-lg border w-2/5">Deposite</button>
+        </div>
+
+        <!-- withdraw part  -->
+        <div class="">
+            <legend>Enter Withdraw Amount</legend>
+            <input placeholder="Withdraw amount" class="my-3 p-3 rounded-xl border-myColor border w-2/5" type="text"
+                name="name" id="withdraw">
+            <br>
+            <button id="withdraw-submit"
+                class="my-3 p-3 rounded-xl bg-myColor text-white font-bold text-lg border w-2/5">
+                Withdraw</button>
+        </div>
+    </section>
 
 </body>
 
