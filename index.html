@@ -6,9 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Bank</title>
+    <!-- tailwind css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- customise css  -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        myColor: '#021E73',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body class="">
+    <header class="bg-myColor ">
+        <nav class="w-4/5 mx-auto text-white h-20 flex justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-bold">Personal Bank</h1>
+            </div>
+            <div class="text-lg g-2 ">
+                <a class="ml-5" href="">Personal</a>
+                <a class="ml-5" href="">Business</a>
+                <a class="ml-5" href="">Developer</a>
+                <a class="ml-5 border rounded-full py-1 px-5" href="">Sign In</a>
+                <a class="ml-5 border rounded-full py-1 px-5 bg-white text-myColor" href="">Sign Up</a>
+            </div>
+        </nav>
+    </header>
 
 </body>
 
