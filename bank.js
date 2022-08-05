@@ -31,8 +31,10 @@ function updateBalance(amount, add) {
 // deposite system 
 document.getElementById('deposite-submit').addEventListener('click', function (event) {
     const depositeAmount = getOutput('deposite')
-    updateTotal('deposite-show', depositeAmount)
-    updateBalance(depositeAmount, true)
+    if (depositeAmount > 0) {
+        updateTotal('deposite-show', depositeAmount)
+        updateBalance(depositeAmount, true)
+    }
 
     /* const deposite = document.getElementById('deposite');
     depositeAmount = deposite.value;
@@ -51,8 +53,13 @@ document.getElementById('deposite-submit').addEventListener('click', function (e
 // withdraw system 
 document.getElementById('withdraw-submit').addEventListener('click', function (event) {
     const withdrawAmount = getOutput('withdraw');
-    updateTotal('withdraw-show', withdrawAmount);
-    updateBalance(withdrawAmount, false)
+    const balanceShow = document.getElementById('balance-show');
+    const balanceAmount = balanceShow.innerText;
+    const previousAmount = parseFloat(balanceAmount);
+    if (withdrawAmount > 0 && withdrawAmount < previousAmount) {
+        updateTotal('withdraw-show', withdrawAmount);
+        updateBalance(withdrawAmount, false)
+    }
 
     /* const withdraw = document.getElementById('withdraw');
     withdrawAmount = withdraw.value;
