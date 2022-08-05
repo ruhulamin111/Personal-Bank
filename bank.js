@@ -1,27 +1,30 @@
-
 // deposite with function 
 function getOutput(inputId) {
-    const deposite = document.getElementById(inputId);
-    depositeAmount = deposite.value;
-    const updateDeposit = parseFloat(depositeAmount);
-    deposite.value = '';
-    return updateDeposit;
+    const input = document.getElementById(inputId);
+    inputText = input.value;
+    const inputAmount = parseFloat(inputText);
+    input.value = '';
+    return inputAmount;
 }
 
+function updateTotal(updateId, updateAmount) {
+    const updateShow = document.getElementById(updateId);
+    const currentUpdate = updateShow.innerText;
+    const updateTotal = parseFloat(currentUpdate) + updateAmount;
+    updateShow.innerText = updateTotal;
+    return updateTotal;
+}
 
 // deposite system 
 document.getElementById('deposite-submit').addEventListener('click', function (event) {
     const depositeAmount = getOutput('deposite')
-    const depositeShow = document.getElementById('deposite-show');
-    const currentDeposite = depositeShow.innerText;
-    const updateDeposit = parseFloat(currentDeposite) + depositeAmount;
-    depositeShow.innerText = updateDeposit;
+    updateTotal('deposite-show', depositeAmount)
 
     const balanceShow = document.getElementById('balance-show');
     const balanceAmount = balanceShow.innerText;
     const updateBalance = parseFloat(balanceAmount) + parseFloat(depositeAmount);
     balanceShow.innerText = updateBalance;
-    deposite.value = '';
+
 
     /* const deposite = document.getElementById('deposite');
     depositeAmount = deposite.value;
@@ -29,7 +32,7 @@ document.getElementById('deposite-submit').addEventListener('click', function (e
     const currentDeposite = depositeShow.innerText;
     const updateDeposit = parseFloat(currentDeposite) + parseFloat(depositeAmount);
     depositeShow.innerText = updateDeposit;
-
+ 
     const balanceShow = document.getElementById('balance-show');
     const balanceAmount = balanceShow.innerText;
     const updateBalance = parseFloat(balanceAmount) + parseFloat(depositeAmount);
@@ -41,16 +44,12 @@ document.getElementById('deposite-submit').addEventListener('click', function (e
 // withdraw system 
 document.getElementById('withdraw-submit').addEventListener('click', function (event) {
     const withdrawAmount = getOutput('withdraw');
-    const withdrawShow = document.getElementById('withdraw-show');
-    const currentWithdraw = withdrawShow.innerText;
-    const updateWithdraw = parseFloat(currentWithdraw) + withdrawAmount;
-    withdrawShow.innerText = updateWithdraw;
+    updateTotal('withdraw-show', withdrawAmount);
 
     const balanceShow = document.getElementById('balance-show');
     const balanceAmount = balanceShow.innerText;
     const updateBalance = parseFloat(balanceAmount) - parseFloat(withdrawAmount);
     balanceShow.innerText = updateBalance;
-    withdraw.value = '';
 
 
     /* const withdraw = document.getElementById('withdraw');
