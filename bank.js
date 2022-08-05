@@ -6,7 +6,7 @@ function getOutput(inputId) {
     input.value = '';
     return inputAmount;
 }
-
+// update total funtion 
 function updateTotal(updateId, updateAmount) {
     const updateShow = document.getElementById(updateId);
     const currentUpdate = updateShow.innerText;
@@ -15,16 +15,24 @@ function updateTotal(updateId, updateAmount) {
     return updateTotal;
 }
 
+// update balance function 
+function updateBalance(amount, add) {
+    const balanceShow = document.getElementById('balance-show');
+    const balanceAmount = balanceShow.innerText;
+    const previousAmount = parseFloat(balanceAmount);
+    if (add == true) {
+        balanceShow.innerText = previousAmount + amount;
+    }
+    else {
+        balanceShow.innerText = previousAmount - amount;
+    }
+}
+
 // deposite system 
 document.getElementById('deposite-submit').addEventListener('click', function (event) {
     const depositeAmount = getOutput('deposite')
     updateTotal('deposite-show', depositeAmount)
-
-    const balanceShow = document.getElementById('balance-show');
-    const balanceAmount = balanceShow.innerText;
-    const updateBalance = parseFloat(balanceAmount) + parseFloat(depositeAmount);
-    balanceShow.innerText = updateBalance;
-
+    updateBalance(depositeAmount, true)
 
     /* const deposite = document.getElementById('deposite');
     depositeAmount = deposite.value;
@@ -38,19 +46,13 @@ document.getElementById('deposite-submit').addEventListener('click', function (e
     const updateBalance = parseFloat(balanceAmount) + parseFloat(depositeAmount);
     balanceShow.innerText = updateBalance;
     deposite.value = ''; */
-
 })
 
 // withdraw system 
 document.getElementById('withdraw-submit').addEventListener('click', function (event) {
     const withdrawAmount = getOutput('withdraw');
     updateTotal('withdraw-show', withdrawAmount);
-
-    const balanceShow = document.getElementById('balance-show');
-    const balanceAmount = balanceShow.innerText;
-    const updateBalance = parseFloat(balanceAmount) - parseFloat(withdrawAmount);
-    balanceShow.innerText = updateBalance;
-
+    updateBalance(withdrawAmount, false)
 
     /* const withdraw = document.getElementById('withdraw');
     withdrawAmount = withdraw.value;
@@ -64,6 +66,4 @@ document.getElementById('withdraw-submit').addEventListener('click', function (e
     const updateBalance = parseFloat(balanceAmount) - parseFloat(withdrawAmount);
     balanceShow.innerText = updateBalance;
     withdraw.value = ''; */
-
 })
-
